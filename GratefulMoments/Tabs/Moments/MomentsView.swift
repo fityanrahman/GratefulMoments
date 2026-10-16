@@ -46,7 +46,13 @@ struct MomentsView: View {
 
 
     private var pathItems: some View {
-        ForEach(moments) { moment in Text(moment.title) }
+        ForEach(moments) { moment in
+            NavigationLink {
+                MomentDetailView(moment: moment)
+            } label: {
+                Text(moment.title)
+            }
+        }
     }
 }
 
